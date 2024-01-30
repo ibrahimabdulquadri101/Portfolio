@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: crimson;
+            text-align: center;
+        }
+        #todobutton{
+            background-color: blue;
+            height: 34px;
+            width: 50px;
+            border-radius: 5px;
+            color: white;
+        }
+        #todoinput{
+            height: 30px;
+            border-radius: 5px;
+
+        }
+        #param1{
+            text-align: left;
+            display: flex;
+            align-items: space-around;
+        }
+        .DIV1{
+            background-color: white;
+        }
+        #todoresult{
+            /* width: 20%; */
+            margin-left:27%;
+            padding-left:15% ;
+            margin-bottom: 0px;
+            }
+    </style>
+</head>
+<body>
+    <div class="DIV1">
+        <p id="para1">TODO LIST</p>
+        <input type="text" id="todoinput">
+        <input type="button" value="+ADD" id="todobutton">
+        <div id="todoresult"></div>
+    </div>
+    <script>
+        let input = document.getElementById('todoinput');
+        let button =document.getElementById('todobutton');
+        let result = document.getElementById('todoresult');
+        const arr = []
+        button.addEventListener('click',() => {
+            let inputValue = input.value;
+            const p = document.createElement('p')
+            p.className = 'paragraph'
+            p.style.background = 'cadetblue'
+            p.style.border = '5px'
+            // p.style.height = '50px'
+            p.style.borderRadius = '5px'
+            p.style.textAlign = 'left'
+            p.style.marginTop = '10%'
+            p.innerHTML = inputValue  + `<span><button class='delButton' style = "margin-left:200px;"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button></span>`
+            let result1 = result.appendChild(p)
+            arr.push(inputValue)
+            localStorage.setItem('my-array', JSON.stringify(arr));
+                    
+            const deleteButtons = document.getElementsByClassName('delButton');
+
+            for (let i = 0; i < deleteButtons.length; i++) {
+                deleteButtons[i].addEventListener('click', (event) => {
+                    const nearest = event.target.closest('.paragraph');
+                    if (nearest) {
+                        nearest.style.display = 'none';
+                        const textContentar = nearest.textContent.trim();
+                        console.log(textContentar);
+                        const storedArray1 = JSON.parse(localStorage.getItem('my-array'))
+                        const storedArray2 = storedArray1.filter(item => item !== textContentar);
+                        localStorage.setItem('my-array', JSON.stringify(storedArray2));
+                    }
+                });
+            }
+            })
+
+            window.onload = () => {
+                const retrieve = JSON.parse(localStorage.getItem('my-array'))||[]
+                const retrievedElem = retrieve?.map((element) => {
+                    const p1 = document.createElement('p')
+                    p1.style.background = 'cadetblue'
+                    p1.style.border = '5px'
+                    // p.style.height = '50px'
+                    p1.style.borderRadius = '5px'
+                    p1.style.textAlign = 'left'
+                    // p1.style.marginTop = '10%'
+                    p1.innerHTML = element + `<span><button class='delButton' style = "margin-left:200px;"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></button></span>`
+                     return p1
+                })
+                retrievedElem?.forEach(element => {
+                    result.appendChild(element)
+                });
+            }
+    </script>
+</body>
+</html>
