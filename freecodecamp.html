@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap.css">
+    <style>
+        button{
+            color: white;
+            background:green;
+            border-radius: 10%;
+            height: 50px;
+            width: 100px;
+            size: calc(50px,50em);
+            margin-left:250px ;
+        }
+       .body{
+        /* opacity: 0.5; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        background-image: url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+        /* box-shadow: inset 100 0 0 2000px red; */
+        font-family: 'Poppins', sans-serif;
+       }
+       .FR{
+        align-items: center;
+        /* background-color: rgb(23, 6, 36); */
+        /* padding-right: 250px; */
+        /* margin-left: 350px; */
+        color: #fff;
+        border: 1px blue;
+        border-radius: 80%;
+        position: 50%;
+        left: 50%;
+        padding: 2.5rem, 0.265rem;
+        size: 2000%;
+        width:100%;
+        box-sizing: content-box;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        /* margin-top: 100px; */
+       }
+       .header{
+        text-align: center;
+        color: white ;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        position: 50%;
+        left: 50%;
+        margin-top: 50px;
+       }
+       /* ::placeholder{ */
+           /* color: royalblue; */
+           /* padding-left: 10px; */
+       /* } */
+       .headdiv{
+        /* padding-right: 25px; */
+        /* padding-left: 25px; */
+        padding: 40px 55px;
+        color: #fff;
+        align-items: center;
+        border-radius: 0.265rem;
+        /* padding-right: 250px; */
+        margin-left: 295px;
+        margin-right: 295px;
+        color: #fff;
+        /* border: 1px groove; */
+        position: 50%;
+        left: 50%;
+        right: 50% ;
+        padding: 2.5rem, 0.265rem;
+        /* border-width: 50%; */
+        size: 2000%; 
+        background: #1b1b32;
+        font-size: large;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 25px;
+       }
+       button{
+         width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+       }
+       .mradio{
+           margin-top: 10px;
+       }
+       /* .radio{ */
+       /* } */
+    .input{
+        width: 100%;
+        border-radius: 0.25rem;
+        height: 2.375rem;
+        margin-top:5px; 
+        margin-bottom:4%;
+        font-weight: 700;
+        outline: none;
+}
+    .input{
+        padding-left: 10px;
+    }
+    .top .top2{
+        padding-top: 0px;
+    }
+    .top .top-text{
+        margin-bottom: 5px;
+    }
+    .label{
+        margin-top: 5%;
+    }
+    footer{
+        text-align: center;
+        font-family: fantasy;
+
+    }
+    footer{
+        color: white;
+    }
+    .option{
+        font-weight: 100;
+        size: 10px;
+    }
+    textarea{
+        outline: none;
+        margin-top: 0px;
+        resize: none;
+    }
+    </style>
+</head>
+<body class="body">
+    <header class="header">
+        <h1>freeCodeCamp Survey Form</h1>
+        <p><em>Thank you for taking the time to help us improve the platform</em></p>
+    </header>
+        <form action="" class="headdiv" id="form" >
+        <div class=".FR" >
+            <label for="name"><b>Name:</b></label ><br>
+            <input  class="input" id="name" placeholder="Enter your name" >
+            <label for="email"><b>Email</b></label><br>
+            <input  class="input" type="email" id="email" placeholder="Enter your Email" >
+            </div>
+            <div>
+            <label for="Age"><b>Age</b><span class="option">(optional)</span></label><br>
+            <input class="input" type="number" name="Age" id="Age" placeholder="Age" >
+            </div>
+            <div>
+                <label for="jon"><b>Which option best describes your current role</b></label><br>
+                <select name="dropdown" id="jon" class="input" required>
+                    <option value="" disabled selected hidden>Select Current Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Full Time Job">Full Time Job</option>
+                    <option value="Full Time Learner">Full Time Learner</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                    <option value="Others">Others</option>
+                
+                </select>
+            </div>
+            <div class="top">
+                <p class="top-text">Would you recommend freeCodeCamp to a friend?</p>
+                    <input type="radio" name="Radio-button" id="" value="Definitely">Definitely<br>
+                    <input type="radio" name="Radio-button" id="" value="Not sure">Not sure<br>
+                    <input type="radio" name="Radio-button" id="" value="Maybe">Maybe
+                </div>
+            
+            <div class="top">
+                <p class="top-text">What is your favorite feature of freeCodeCamp?</p>
+                <select id="most-like" name="mostLike" class="input" required="">
+                  <option disabled="" selected="" value="">Select an option</option>
+                  <option value="challenges">Challenges</option>
+                  <option value="projects">Projects</option>
+                  <option value="community">Community</option>
+                  <option value="openSource">Open Source</option>
+                </select>
+              </div>
+            <div class="top">
+                <p class="top-text"><b>What would you like to see improved?</b>(Check all that apply)</p>
+                <div class="top2">
+                <input type="checkbox" name="Frontend" id="Frontend" value="Front-end projects">
+                <label for="frontend">Front-end projects</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Back-end projects">
+                <label for="frontend">Back-end projects</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Data visualization">
+                <label for="frontend">Data visualization</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Challenges">
+                <label for="frontend">Challenges</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Open Source community">
+                <label for="Frontend"> Open Source community</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Gitter help rooms">
+                <label for="frontend">Gitter help rooms</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Videos">
+                <label for="frontend">Videos</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="City Meetups">
+                <label for="frontend">City Meetups</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Wiki">
+                <label for="frontend">Wiki</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Forum">
+                <label for="frontend">Forum</label><br>
+                <input type="checkbox" name="Frontend" id="Frontend" value="Additional courses">
+                <label for="frontend">Additional courses</label><br>
+                </div>
+                <div class="top">
+                    <p class="top-text"><b>Any comments or Suggestions? </b></p><br> 
+                    <textarea name="Enter yoyr comment here id="" cols="83" rows="10" placeholder=" Enter your comment here"></textarea>
+                    <button type="submit">SUBMIT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer>Code written Quadri by programming hub</footer>
+</body>
+</html>
